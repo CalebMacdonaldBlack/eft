@@ -1,0 +1,4117 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-dark">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">EFT Quick Guide</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="./index.html">Ballistics</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./maps/customs.html">Customs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./maps/reserve.html">Reserve</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./maps/interchange.html">Interchange</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./maps/shoreline.html">Shoreline</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./maps/factory.html">Factory</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./maps/woods.html">Woods</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./maps/labs.html">Labs</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="m-5">
+        <table class="table table-dark">
+            <tbody>
+                <tr>
+                    <th colspan="2">Effectiveness level
+                    </th>
+                    <th>Average amount of bullets stopped
+                    </th>
+                    <th>Explanation
+                    </th>
+                </tr>
+                <tr>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">Pointless
+                    </td>
+                    <td>20+
+                    </td>
+                    <td rowspan="1">Can't penetrate in any reasonable amount of hits
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#dd333380;">It's possible, but...
+                    </td>
+                    <td>13 to 20
+                    </td>
+                    <td rowspan="1">Typically doesn't penetrate at all for a large number of hits, or starts with a very
+                        low
+                        chance and barely increases
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                    <td style="background-color:#EB6C0D80;">Magdump only
+                    </td>
+                    <td>9 to 13
+                    </td>
+                    <td rowspan="1">Has a very low or no penetration chance initially and very slowly gains chance
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">Slightly effective
+                    </td>
+                    <td>5 to 9
+                    </td>
+                    <td rowspan="1">Has a low penetration chance initially and slowly gains chance, or quickly damages
+                        armor
+                        until it penetrates
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                    <td style="background-color:#FB9C0E80;">Effective
+                    </td>
+                    <td>3 to 5
+                    </td>
+                    <td rowspan="1">Starts with a low-medium penetration chance but quickly increases
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#00640080;">Very effective
+                    </td>
+                    <td>1 to 3
+                    </td>
+                    <td rowspan="1">Penetrates a large percent of the time initially, often quickly going to &gt;90%
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">Basically ignores
+                    </td>
+                    <td>&lt;1
+                    </td>
+                    <td rowspan="1">Initially penetrates &gt;80% of the time
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br><br>
+
+        <table class="table table-dark" style="max-width:100%;">
+            <thead>
+                <tr class="stickyrow">
+                    <th>Caliber
+                    </th>
+                    <th style="position: sticky;top: 10px;">Name
+                    </th>
+                    <th style="position: sticky;top: 10px;">Flesh<br>damage
+                    </th>
+                    <th style="position: sticky;top: 10px;">Penetration<br>power
+                    </th>
+                    <th style="position: sticky;top: 10px;">Armor<br>damage&nbsp;%
+                    </th>
+                    <th style="position: sticky;top: 10px;">Accuracy<br>%
+                    </th>
+                    <th style="position: sticky;top: 10px;">Recoil<br>%
+                    </th>
+                    <th style="position: sticky;top: 10px;">Fragmentation<br>chance*
+                    </th>
+                    <th style="position: sticky;top: 10px;">1
+                    </th>
+                    <th style="position: sticky;top: 10px;">2
+                    </th>
+                    <th style="position: sticky;top: 10px;">3
+                    </th>
+                    <th style="position: sticky;top: 10px;">4
+                    </th>
+                    <th style="position: sticky;top: 10px;">5
+                    </th>
+                    <th style="position: sticky;top: 10px;">6
+                    </th>
+                </tr>
+                <tr>
+                    <th class="headerSort" tabindex="0" role="columnheader button" title="Sort ascending">&nbsp;
+                    </th>
+                    <th class="headerSort" tabindex="0" role="columnheader button" title="Sort ascending">
+                    </th>
+                    <th class="headerSort" tabindex="0" role="columnheader button" title="Sort ascending">
+                    </th>
+                    <th class="headerSort" tabindex="0" role="columnheader button" title="Sort ascending">
+                    </th>
+                    <th class="headerSort" tabindex="0" role="columnheader button" title="Sort ascending">
+                    </th>
+                    <th class="headerSort" tabindex="0" role="columnheader button" title="Sort ascending">
+                    </th>
+                    <th class="headerSort" tabindex="0" role="columnheader button" title="Sort ascending">
+                    </th>
+                    <th class="headerSort" tabindex="0" role="columnheader button" title="Sort ascending">
+                    </th>
+                    <th class="headerSort" tabindex="0" role="columnheader button" title="Sort ascending">
+                    </th>
+                    <th class="headerSort" tabindex="0" role="columnheader button" title="Sort ascending">
+                    </th>
+                    <th class="headerSort" tabindex="0" role="columnheader button" title="Sort ascending">
+                    </th>
+                    <th class="headerSort" tabindex="0" role="columnheader button" title="Sort ascending">
+                    </th>
+                    <th class="headerSort" tabindex="0" role="columnheader button" title="Sort ascending">
+                    </th>
+                    <th class="headerSort" tabindex="0" role="columnheader button" title="Sort ascending">
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+
+                <tr>
+                    <td rowspan="16"><a href="/12x70mm" title="12x70mm">12x70mm</a>
+                    </td>
+                    <td rowspan="1"><a href="/12/70_5.25mm_Buckshot" title="12/70 5.25mm Buckshot">12/70 5.25mm
+                            Buckshot</a>** <sup>S</sup>
+                    </td>
+                    <td data-sort-value="296">8x37
+                    </td>
+                    <td>1
+                    </td>
+                    <td>15
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>0%
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/12/70_8.5_mm_%22Magnum%22_Buckshot"
+                            title="12/70 8.5 mm &quot;Magnum&quot; Buckshot">12/70 8.5 mm "Magnum" Buckshot</a>**
+                    </td>
+                    <td data-sort-value="400">8x50
+                    </td>
+                    <td>2
+                    </td>
+                    <td>26
+                    </td>
+                    <td>
+                        <font color="red">-15</font>
+                    </td>
+                    <td>
+                        <font color="red">+115</font>
+                    </td>
+                    <td>0%
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/12x70_6.5_mm_%22Express%22_Buckshot"
+                            title="12x70 6.5 mm &quot;Express&quot; Buckshot">12x70 6.5 mm "Express" Buckshot</a>**
+                    </td>
+                    <td data-sort-value="315">9x35
+                    </td>
+                    <td>3
+                    </td>
+                    <td>26
+                    </td>
+                    <td>
+                        <font color="green">+15</font>
+                    </td>
+                    <td>
+                    </td>
+                    <td>0%
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/12x70_7mm_Buckshot" title="12x70 7mm Buckshot">12x70 7mm Buckshot</a>**
+                    </td>
+                    <td data-sort-value="312">8x39
+                    </td>
+                    <td>3
+                    </td>
+                    <td>26
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>0%
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/12/70_Flechette" title="12/70 Flechette">12/70 Flechette</a>**
+                        <sup>S</sup>
+                    </td>
+                    <td data-sort-value="200">8x25
+                    </td>
+                    <td>31
+                    </td>
+                    <td>26
+                    </td>
+                    <td>
+                        <font color="red">-25</font>
+                    </td>
+                    <td>
+                    </td>
+                    <td>0%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/12x70_RIP" title="12x70 RIP">12x70 RIP</a>
+                    </td>
+                    <td>265
+                    </td>
+                    <td>0
+                    </td>
+                    <td>11
+                    </td>
+                    <td>
+                        <font color="green">+80</font>
+                    </td>
+                    <td>
+                        <font color="red">+35</font>
+                    </td>
+                    <td>100%
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/12/70_HP_Slug_%22SuperFormance%22"
+                            title="12/70 HP Slug &quot;SuperFormance&quot;">12/70 HP Slug "SuperFormance"</a>
+                    </td>
+                    <td>220
+                    </td>
+                    <td>2
+                    </td>
+                    <td>12
+                    </td>
+                    <td>
+                        <font color="green">+170</font>
+                    </td>
+                    <td>
+                        <font color="green">-15</font>
+                    </td>
+                    <td>39%
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/12/70_Grizzly_40_Slug" title="12/70 Grizzly 40 Slug">12/70 Grizzly 40
+                            Slug</a>
+                    </td>
+                    <td>190
+                    </td>
+                    <td>12
+                    </td>
+                    <td>48
+                    </td>
+                    <td>
+                        <font color="green">+80</font>
+                    </td>
+                    <td>
+                        <font color="red">+20</font>
+                    </td>
+                    <td>12%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/12/70_HP_Slug_Copper_Sabot_Premier"
+                            title="12/70 HP Slug Copper Sabot Premier">12/70 HP Slug Copper Sabot Premier</a>
+                    </td>
+                    <td>206
+                    </td>
+                    <td>14
+                    </td>
+                    <td>46
+                    </td>
+                    <td>
+                        <font color="green">+150</font>
+                    </td>
+                    <td>
+                        <font color="red">+10</font>
+                    </td>
+                    <td>38%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/12x70_Led_slug" title="12x70 Led slug">12x70 Led slug</a>
+                    </td>
+                    <td>167
+                    </td>
+                    <td>15
+                    </td>
+                    <td>55
+                    </td>
+                    <td>
+                        <font color="green">+120</font>
+                    </td>
+                    <td>
+                    </td>
+                    <td>20%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/12/70_%22Poleva-3%22_Slug" title="12/70 &quot;Poleva-3&quot; Slug">12/70
+                            "Poleva-3" Slug</a>
+                    </td>
+                    <td>140
+                    </td>
+                    <td>17
+                    </td>
+                    <td>40
+                    </td>
+                    <td>
+                        <font color="green">+110</font>
+                    </td>
+                    <td>
+                        <font color="green">-15</font>
+                    </td>
+                    <td>20%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/12/70_Dual_Sabot_Slug" title="12/70 Dual Sabot Slug">12/70 Dual Sabot
+                            Slug</a>
+                    </td>
+                    <td data-sort-value="170">2x85
+                    </td>
+                    <td>17
+                    </td>
+                    <td>65
+                    </td>
+                    <td>
+                        <font color="green">+100</font>
+                    </td>
+                    <td>
+                        <font color="red">+15</font>
+                    </td>
+                    <td>10%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/12/70_FTX_Custom_LIte_Slug" title="12/70 FTX Custom LIte Slug">12/70 FTX
+                            Custom LIte Slug</a>
+                    </td>
+                    <td>183
+                    </td>
+                    <td>20
+                    </td>
+                    <td>50
+                    </td>
+                    <td>
+                        <font color="green">+135</font>
+                    </td>
+                    <td>
+                    </td>
+                    <td>10%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/12/70_%22Poleva-6u%22_Slug" title="12/70 &quot;Poleva-6u&quot; Slug">12/70
+                            "Poleva-6u" Slug</a>
+                    </td>
+                    <td>150
+                    </td>
+                    <td>20
+                    </td>
+                    <td>50
+                    </td>
+                    <td>
+                        <font color="green">+115</font>
+                    </td>
+                    <td>
+                        <font color="green">-10</font>
+                    </td>
+                    <td>15%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/12x70_shell_with_.50_BMG_bullet"
+                            title="12x70 shell with .50 BMG bullet">12x70
+                            shell with .50 BMG bullet</a> <sup>T</sup>
+                    </td>
+                    <td>197
+                    </td>
+                    <td>26
+                    </td>
+                    <td>57
+                    </td>
+                    <td>
+                        <font color="green">+90</font>
+                    </td>
+                    <td>
+                        <font color="red">+25</font>
+                    </td>
+                    <td>5%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/12/70_AP-20_Slug" title="12/70 AP-20 Slug">12/70 AP-20 Slug</a>
+                    </td>
+                    <td>164
+                    </td>
+                    <td>37
+                    </td>
+                    <td>65
+                    </td>
+                    <td>
+                        <font color="green">+125</font>
+                    </td>
+                    <td>
+                        <font color="red">+50</font>
+                    </td>
+                    <td>3%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#fb9c0e80;">4
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="8"><a href="/20x70mm" title="20x70mm">20x70mm</a>
+                    </td>
+                    <td rowspan="1"><a href="/20/70_5.6mm_Buckshot" title="20/70 5.6mm Buckshot">20/70 5.6mm
+                            Buckshot</a>**
+                        <sup>S</sup>
+                    </td>
+                    <td data-sort-value="208">8x26
+                    </td>
+                    <td>1
+                    </td>
+                    <td>12
+                    </td>
+                    <td>
+                        <font color="red">-10</font>
+                    </td>
+                    <td>
+                        <font color="red">+10</font>
+                    </td>
+                    <td>0%
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/20/70_6.2mm_Buckshot" title="20/70 6.2mm Buckshot">20/70 6.2mm
+                            Buckshot</a>**
+                    </td>
+                    <td data-sort-value="176">8x22
+                    </td>
+                    <td>2
+                    </td>
+                    <td>13
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>0%
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/20x70_7.5mm_Buckshot" title="20x70 7.5mm Buckshot">20x70 7.5mm
+                            Buckshot</a>**
+                    </td>
+                    <td data-sort-value="200">8x25
+                    </td>
+                    <td>3
+                    </td>
+                    <td>14
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>0%
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/20/70_7.3mm_Buckshot" title="20/70 7.3mm Buckshot">20/70 7.3mm
+                            Buckshot</a>**
+                    </td>
+                    <td data-sort-value="207">9x23
+                    </td>
+                    <td>3
+                    </td>
+                    <td>13
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        <font color="red">+15</font>
+                    </td>
+                    <td>0%
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/20/70_Devastator_Slug" title="20/70 Devastator Slug">20/70 Devastator
+                            Slug</a>
+                    </td>
+                    <td>198
+                    </td>
+                    <td>5
+                    </td>
+                    <td>13
+                    </td>
+                    <td>
+                        <font color="green">+125</font>
+                    </td>
+                    <td>
+                        <font color="red">+30</font>
+                    </td>
+                    <td>100%
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/20/70_Slug_%22Poleva-3%22" title="20/70 Slug &quot;Poleva-3&quot;">20/70
+                            Slug
+                            "Poleva-3"</a>
+                    </td>
+                    <td>120
+                    </td>
+                    <td>14
+                    </td>
+                    <td>35
+                    </td>
+                    <td>
+                        <font color="green">+110</font>
+                    </td>
+                    <td>
+                        <font color="green">-15</font>
+                    </td>
+                    <td>20%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/20/70_Star_Slug" title="20/70 Star Slug">20/70 Star Slug</a>
+                    </td>
+                    <td>154
+                    </td>
+                    <td>16
+                    </td>
+                    <td>42
+                    </td>
+                    <td>
+                        <font color="green">+130</font>
+                    </td>
+                    <td>
+                        <font color="red">+5</font>
+                    </td>
+                    <td>10%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/20/70_Slug_Poleva-6u" title="20/70 Slug Poleva-6u">20/70 Slug
+                            Poleva-6u</a>
+                    </td>
+                    <td>135
+                    </td>
+                    <td>17
+                    </td>
+                    <td>40
+                    </td>
+                    <td>
+                        <font color="green">+110</font>
+                    </td>
+                    <td>
+                        <font color="green">-10</font>
+                    </td>
+                    <td>15%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="4"><a href="/23x75mm" title="23x75mm">23x75mm</a>
+                    </td>
+                    <td><a href="/23x75mm_%22Star%22" title="23x75mm &quot;Star&quot;">23x75mm "Star"</a>
+                    </td>
+                    <td>0
+                    </td>
+                    <td>0
+                    </td>
+                    <td>0
+                    </td>
+                    <td>0
+                    </td>
+                    <td>0
+                    </td>
+                    <td>20%
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="/23x75mm_Shrapnel-25" title="23x75mm Shrapnel-25">23x75mm Shrapnel-25</a>**
+                        <sup>S</sup>
+                    </td>
+                    <td data-sort-value="624">8x78
+                    </td>
+                    <td>10
+                    </td>
+                    <td>20
+                    </td>
+                    <td>
+                        <font color="green">+20</font>
+                    </td>
+                    <td>
+                        <font color="red">+10</font>
+                    </td>
+                    <td>0%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#fb9c0e80;">4
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="/23x75mm_Shrapnel_10" title="23x75mm Shrapnel 10">23x75mm Shrapnel 10</a>**
+                        <sup>S</sup>
+                    </td>
+                    <td data-sort-value="696">8x87
+                    </td>
+                    <td>11
+                    </td>
+                    <td>20
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>0%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#fb9c0e80;">4
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="/23x75mm_%22Barricade%22" title="23x75mm &quot;Barricade&quot;">23x75mm "Barricade"</a>
+                    </td>
+                    <td>192
+                    </td>
+                    <td>39
+                    </td>
+                    <td>75
+                    </td>
+                    <td>
+                        <font color="red">-5</font>
+                    </td>
+                    <td>
+                        <font color="red">+25</font>
+                    </td>
+                    <td>20%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#fb9c0e80;">4
+                    </td>
+                    <td style="background-color:#fb9c0e80;">4
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="14"><a href="/9x18mm_Makarov" title="9x18mm Makarov">9x18mm Makarov</a>
+                    </td>
+                    <td rowspan="1"><a href="/9x18_mm_PM_SP8_gzh" title="9x18 mm PM SP8 gzh">9x18 mm PM SP8 gzh</a>
+                        <sup>S</sup>
+                    </td>
+                    <td>67
+                    </td>
+                    <td>1
+                    </td>
+                    <td>2
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>60%
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/9x18_mm_PM_SP7_gzh" title="9x18 mm PM SP7 gzh">9x18 mm PM SP7 gzh</a>
+                    </td>
+                    <td>77
+                    </td>
+                    <td>2
+                    </td>
+                    <td>5
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>2%
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/9x18_mm_PM_PSV" title="9x18 mm PM PSV">9x18 mm PM PSV</a> <sup>S</sup>
+                    </td>
+                    <td>69
+                    </td>
+                    <td>3
+                    </td>
+                    <td>5
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>40%
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/9x18_mm_PM_9_P_gzh" title="9x18 mm PM 9 P gzh">9x18 mm PM 9 P gzh</a>
+                        <sup>S</sup>
+                    </td>
+                    <td>50
+                    </td>
+                    <td>5
+                    </td>
+                    <td>16
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>25%
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/9x18_mm_PM_PSO_gzh" title="9x18 mm PM PSO gzh">9x18 mm PM PSO gzh</a>
+                        <sup>S</sup>
+                    </td>
+                    <td>54
+                    </td>
+                    <td>5
+                    </td>
+                    <td>13
+                    </td>
+                    <td>
+                        <font color="green">+10</font>
+                    </td>
+                    <td>
+                    </td>
+                    <td>35%
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/9x18_mm_PM_PS_gs_PPO" title="9x18 mm PM PS gs PPO">9x18 mm PM PS gs
+                            PPO</a>
+                        <sup>S</sup>
+                    </td>
+                    <td>55
+                    </td>
+                    <td>6
+                    </td>
+                    <td>16
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>25%
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/9x18_mm_PM_PRS_gs" title="9x18 mm PM PRS gs">9x18 mm PM PRS gs</a>
+                        <sup>S</sup>
+                    </td>
+                    <td>58
+                    </td>
+                    <td>6
+                    </td>
+                    <td>16
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>30%
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/9x18_mm_PM_PPe_gzh" title="9x18 mm PM PPe gzh">9x18 mm PM PPe gzh</a>
+                        <sup>S</sup>
+                    </td>
+                    <td>61
+                    </td>
+                    <td>7
+                    </td>
+                    <td>15
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>35%
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/9x18_mm_PM_PPT_gzh" title="9x18 mm PM PPT gzh">9x18 mm PM PPT gzh</a>
+                        <sup>S</sup> <sup>T</sup>
+                    </td>
+                    <td>59
+                    </td>
+                    <td>8
+                    </td>
+                    <td>22
+                    </td>
+                    <td>
+                        <font color="red">-5</font>
+                    </td>
+                    <td>
+                        <font color="green">-7</font>
+                    </td>
+                    <td>17%
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/9x18_mm_PM_Pst_gzh" title="9x18 mm PM Pst gzh">9x18 mm PM Pst gzh</a>
+                        <sup>S</sup>
+                    </td>
+                    <td>50
+                    </td>
+                    <td>12
+                    </td>
+                    <td>26
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>20%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/9x18_PM_mm_RG028_gzh" title="9x18 PM mm RG028 gzh">9x18 PM mm RG028
+                            gzh</a>
+                        <sup>S</sup>
+                    </td>
+                    <td>65
+                    </td>
+                    <td>13
+                    </td>
+                    <td>26
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>2%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/9x18_mm_PM_9_BZT_gzh" title="9x18 mm PM 9 BZT gzh">9x18 mm PM 9 BZT
+                            gzh</a>
+                        <sup>S</sup>
+                    </td>
+                    <td>53
+                    </td>
+                    <td>18
+                    </td>
+                    <td>28
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>17%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/9x18_mm_PM_PMM" title="9x18 mm PM PMM">9x18 mm PM PMM</a>
+                    </td>
+                    <td>58
+                    </td>
+                    <td>24
+                    </td>
+                    <td>33
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        <font color="red">+5</font>
+                    </td>
+                    <td>17%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/9x18_mm_PM_PBM" title="9x18 mm PM PBM">9x18 mm PM PBM</a>
+                    </td>
+                    <td>40
+                    </td>
+                    <td>28
+                    </td>
+                    <td>30
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        <font color="red">+4</font>
+                    </td>
+                    <td>16%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="7"><a href="/7.62x25mm_Tokarev" title="7.62x25mm Tokarev">7.62x25mm Tokarev</a>
+                    </td>
+                    <td rowspan="1"><a href="/7.62x25mm_TT_LRNPC" title="7.62x25mm TT LRNPC">7.62x25mm TT LRNPC</a>
+                    </td>
+                    <td>66
+                    </td>
+                    <td>7
+                    </td>
+                    <td>27
+                    </td>
+                    <td>
+                        <font color="green">+10</font>
+                    </td>
+                    <td>
+                        <font color="green">-10</font>
+                    </td>
+                    <td>35%
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/7.62x25mm_TT_LRN" title="7.62x25mm TT LRN">7.62x25mm TT LRN</a>
+                    </td>
+                    <td>64
+                    </td>
+                    <td>8
+                    </td>
+                    <td>28
+                    </td>
+                    <td>
+                        <font color="green">+5</font>
+                    </td>
+                    <td>
+                        <font color="green">-5</font>
+                    </td>
+                    <td>35%
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/7.62x25mm_TT_FMJ43" title="7.62x25mm TT FMJ43">7.62x25mm TT FMJ43</a>
+                    </td>
+                    <td>60
+                    </td>
+                    <td>11
+                    </td>
+                    <td>29
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>25%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/7.62x25mm_TT_AKBS" title="7.62x25mm TT AKBS">7.62x25mm TT AKBS</a>
+                    </td>
+                    <td>58
+                    </td>
+                    <td>12
+                    </td>
+                    <td>32
+                    </td>
+                    <td>
+                        <font color="green">+15</font>
+                    </td>
+                    <td>
+                        <font color="green">-15</font>
+                    </td>
+                    <td>25%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/7.62x25mm_TT_P_gl" title="7.62x25mm TT P gl">7.62x25mm TT P gl</a>
+                    </td>
+                    <td>58
+                    </td>
+                    <td>14
+                    </td>
+                    <td>32
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>25%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/7.62x25mm_TT_PT_gzh" title="7.62x25mm TT PT gzh">7.62x25mm TT PT gzh</a>
+                        <sup>T</sup>
+                    </td>
+                    <td>55
+                    </td>
+                    <td>18
+                    </td>
+                    <td>34
+                    </td>
+                    <td>
+                        <font color="red">-10</font>
+                    </td>
+                    <td>
+                    </td>
+                    <td>17%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/7.62x25mm_TT_Pst_gzh" title="7.62x25mm TT Pst gzh">7.62x25mm TT Pst
+                            gzh</a>
+                    </td>
+                    <td>50
+                    </td>
+                    <td>25
+                    </td>
+                    <td>36
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>20%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="8"><a href="/9x19mm_Parabellum" title="9x19mm Parabellum">9x19mm Parabellum</a>
+                    </td>
+                    <td rowspan="1"><a href="/9x19_mm_RIP" title="9x19 mm RIP">9x19 mm RIP</a>
+                    </td>
+                    <td>102
+                    </td>
+                    <td>2
+                    </td>
+                    <td>11
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        <font color="red">+20</font>
+                    </td>
+                    <td>100%
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/9x19_mm_QuakeMaker" title="9x19 mm QuakeMaker">9x19 mm QuakeMaker</a>
+                        <sup>S</sup>
+                    </td>
+                    <td>85
+                    </td>
+                    <td>8
+                    </td>
+                    <td>22
+                    </td>
+                    <td>
+                        <font color="green">+10</font>
+                    </td>
+                    <td>
+                        <font color="red">+10</font>
+                    </td>
+                    <td>10%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/9x19_mm_PSO_gzh" title="9x19 mm PSO gzh">9x19 mm PSO gzh</a> <sup>S</sup>
+                    </td>
+                    <td>59
+                    </td>
+                    <td>10
+                    </td>
+                    <td>32
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>25%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/9x19_mm_Luger_CCI" title="9x19 mm Luger CCI">9x19 mm Luger CCI</a>
+                    </td>
+                    <td>70
+                    </td>
+                    <td>10
+                    </td>
+                    <td>38
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>25%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/9x19_mm_Green_Tracer" title="9x19 mm Green Tracer">9x19 mm Green
+                            Tracer</a>
+                        <sup>T</sup>
+                    </td>
+                    <td>58
+                    </td>
+                    <td>14
+                    </td>
+                    <td>33
+                    </td>
+                    <td>
+                        <font color="red">-5</font>
+                    </td>
+                    <td>
+                        <font color="green">-6</font>
+                    </td>
+                    <td>15%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/9x19_mm_Pst_gzh" title="9x19 mm Pst gzh">9x19 mm Pst gzh</a>
+                    </td>
+                    <td>54
+                    </td>
+                    <td>20
+                    </td>
+                    <td>33
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>15%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/9x19_mm_AP_6.3" title="9x19 mm AP 6.3">9x19 mm AP 6.3</a>
+                    </td>
+                    <td>52
+                    </td>
+                    <td>30
+                    </td>
+                    <td>48
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>5%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/9x19_mm_7N31" title="9x19 mm 7N31">9x19 mm 7N31</a>
+                    </td>
+                    <td>52
+                    </td>
+                    <td>39
+                    </td>
+                    <td>53
+                    </td>
+                    <td>
+                        <font color="green">+15</font>
+                    </td>
+                    <td>
+                        <font color="red">+15</font>
+                    </td>
+                    <td>5%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="5"><a href="/.45_ACP" title=".45 ACP">.45 ACP</a>
+                    </td>
+                    <td rowspan="1"><a href="/.45_RIP" title=".45 RIP">.45 RIP</a> <sup>S</sup>
+                    </td>
+                    <td>127
+                    </td>
+                    <td>3
+                    </td>
+                    <td>12
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>100%
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/.45_ACP_Hydra-Shok" title=".45 ACP Hydra-Shok">.45 ACP Hydra-Shok</a>
+                        <sup>S</sup>
+                    </td>
+                    <td>95
+                    </td>
+                    <td>13
+                    </td>
+                    <td>30
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>50%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/.45_ACP_Lasermatch_FMJ" title=".45 ACP Lasermatch FMJ">.45 ACP Lasermatch
+                            FMJ</a> <sup>S</sup> <sup>T</sup>
+                    </td>
+                    <td>74
+                    </td>
+                    <td>18
+                    </td>
+                    <td>37
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>1%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/.45_ACP_FMJ" title=".45 ACP FMJ">.45 ACP FMJ</a> <sup>S</sup>
+                    </td>
+                    <td>72
+                    </td>
+                    <td>19
+                    </td>
+                    <td>36
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>1%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/.45_ACP_AP" title=".45 ACP AP">.45 ACP AP</a> <sup>S</sup>
+                    </td>
+                    <td>70
+                    </td>
+                    <td>36
+                    </td>
+                    <td>43
+                    </td>
+                    <td>
+                        <font color="red">-5</font>
+                    </td>
+                    <td>
+                        <font color="red">+20</font>
+                    </td>
+                    <td>1%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="4"><a href="/9x21mm_Gyurza" title="9x21mm Gyurza">9x21mm Gyurza</a>
+                    </td>
+                    <td rowspan="1"><a href="/9x21_mm_SP12" title="9x21 mm SP12">9x21 mm SP12</a>
+                    </td>
+                    <td>80
+                    </td>
+                    <td>15
+                    </td>
+                    <td>63
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>35%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/9x21_mm_SP11" title="9x21 mm SP11">9x21 mm SP11</a>
+                    </td>
+                    <td>65
+                    </td>
+                    <td>18
+                    </td>
+                    <td>44
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>30%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/9x21_mm_SP10" title="9x21 mm SP10">9x21 mm SP10</a>
+                    </td>
+                    <td>49
+                    </td>
+                    <td>35
+                    </td>
+                    <td>46
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>20%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/9x21_mm_SP13" title="9x21 mm SP13">9x21 mm SP13</a> <sup>T</sup>
+                    </td>
+                    <td>63
+                    </td>
+                    <td>39
+                    </td>
+                    <td>47
+                    </td>
+                    <td>
+                        <font color="red">-4</font>
+                    </td>
+                    <td>
+                        <font color="green">-4</font>
+                    </td>
+                    <td>20%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="7"><a href="/5.7x28mm_FN" title="5.7x28mm FN">5.7x28mm FN</a>
+                    </td>
+                    <td rowspan="1"><a href="/5.7x28_mm_R37.F" title="5.7x28 mm R37.F">5.7x28 mm R37.F</a>
+                    </td>
+                    <td>98
+                    </td>
+                    <td>8
+                    </td>
+                    <td>7
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>100%
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/5.7x28_mm_SS198LF" title="5.7x28 mm SS198LF">5.7x28 mm SS198LF</a>
+                    </td>
+                    <td>74
+                    </td>
+                    <td>10
+                    </td>
+                    <td>15
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>80%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/5.7x28_mm_R37.X" title="5.7x28 mm R37.X">5.7x28 mm R37.X</a>
+                    </td>
+                    <td>81
+                    </td>
+                    <td>11
+                    </td>
+                    <td>14
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>70%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/5.7x28_mm_SS197SR" title="5.7x28 mm SS197SR">5.7x28 mm SS197SR</a>
+                    </td>
+                    <td>62
+                    </td>
+                    <td>20
+                    </td>
+                    <td>22
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>50%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/5.7x28_mm_L191" title="5.7x28 mm L191">5.7x28 mm L191</a> <sup>T</sup>
+                    </td>
+                    <td>58
+                    </td>
+                    <td>33
+                    </td>
+                    <td>41
+                    </td>
+                    <td>
+                        <font color="red">-4</font>
+                    </td>
+                    <td>
+                    </td>
+                    <td>20%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/5.7x28_mm_SB193" title="5.7x28 mm SB193">5.7x28 mm SB193</a> <sup>S</sup>
+                    </td>
+                    <td>54
+                    </td>
+                    <td>35
+                    </td>
+                    <td>37
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        <font color="green">-20</font>
+                    </td>
+                    <td>20%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/5.7x28_mm_SS190" title="5.7x28 mm SS190">5.7x28 mm SS190</a>
+                    </td>
+                    <td>49
+                    </td>
+                    <td>37
+                    </td>
+                    <td>43
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>20%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="4"><a href="/4.6x30mm_HK" title="4.6x30mm HK">4.6x30mm HK</a>
+                    </td>
+                    <td rowspan="1"><a href="/4.6x30mm_Action_SX" title="4.6x30mm Action SX">4.6x30mm Action SX</a>
+                    </td>
+                    <td>65
+                    </td>
+                    <td>18
+                    </td>
+                    <td>39
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>50%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/4.6x30mm_Subsonic_SX" title="4.6x30mm Subsonic SX">4.6x30mm Subsonic
+                            SX</a>
+                        <sup>S</sup>
+                    </td>
+                    <td>45
+                    </td>
+                    <td>36
+                    </td>
+                    <td>46
+                    </td>
+                    <td>
+                        <font color="green">+10</font>
+                    </td>
+                    <td>
+                        <font color="green">-22</font>
+                    </td>
+                    <td>20%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/4.6x30mm_FMJ_SX" title="4.6x30mm FMJ SX">4.6x30mm FMJ SX</a>
+                    </td>
+                    <td>43
+                    </td>
+                    <td>40
+                    </td>
+                    <td>41
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>20%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/4.6x30mm_AP_SX" title="4.6x30mm AP SX">4.6x30mm AP SX</a>
+                    </td>
+                    <td>35
+                    </td>
+                    <td>53
+                    </td>
+                    <td>46
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        <font color="red">+10</font>
+                    </td>
+                    <td>10%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="4"><a href="/9x39mm" title="9x39mm">9x39mm</a>
+                    </td>
+                    <td rowspan="1"><a href="/9x39_mm_SP-5" title="9x39 mm SP-5">9x39 mm SP-5</a> <sup>S</sup>
+                    </td>
+                    <td>68
+                    </td>
+                    <td>35
+                    </td>
+                    <td>52
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>20%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/9x39_mm_SP-6" title="9x39 mm SP-6">9x39 mm SP-6</a> <sup>S</sup>
+                    </td>
+                    <td>58
+                    </td>
+                    <td>43
+                    </td>
+                    <td>60
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        <font color="red">+10</font>
+                    </td>
+                    <td>10%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/9x39_mm_7N9_SPP" title="9x39 mm 7N9 SPP">9x39 mm 7N9 SPP</a> <sup>S</sup>
+                    </td>
+                    <td>64
+                    </td>
+                    <td>45
+                    </td>
+                    <td>56
+                    </td>
+                    <td>
+                        <font color="green">+10</font>
+                    </td>
+                    <td>
+                        <font color="red">+20</font>
+                    </td>
+                    <td>20%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/9x39_mm_7N12_BP" title="9x39 mm 7N12 BP">9x39 mm 7N12 BP</a> <sup>S</sup>
+                    </td>
+                    <td>60
+                    </td>
+                    <td>48
+                    </td>
+                    <td>68
+                    </td>
+                    <td>
+                        <font color="green">+10</font>
+                    </td>
+                    <td>
+                        <font color="red">+22</font>
+                    </td>
+                    <td>10%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="4"><a href="/.366_TKM" title=".366 TKM">.366 TKM</a>
+                    </td>
+                    <td rowspan="1"><a href="/.366_TKM_Geksa" title=".366 TKM Geksa">.366 TKM Geksa</a>
+                    </td>
+                    <td>110
+                    </td>
+                    <td>14
+                    </td>
+                    <td>38
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>45%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+
+                <tr>
+                    <td rowspan="1"><a href="/.366_TKM_FMJ" title=".366 TKM FMJ">.366 TKM FMJ</a>
+                    </td>
+                    <td>98
+                    </td>
+                    <td>23
+                    </td>
+                    <td>48
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        <font color="red">+10</font>
+                    </td>
+                    <td>25%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/.366_TKM_EKO" title=".366 TKM EKO">.366 TKM EKO</a>
+                    </td>
+                    <td>73
+                    </td>
+                    <td>30
+                    </td>
+                    <td>40
+                    </td>
+                    <td>
+                        <font color="red">-10</font>
+                    </td>
+                    <td>
+                        <font color="green">-15</font>
+                    </td>
+                    <td>20%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/.366_AP" title=".366 AP">.366 AP</a>
+                    </td>
+                    <td>90
+                    </td>
+                    <td>42
+                    </td>
+                    <td>60
+                    </td>
+                    <td>
+                        <font color="red">-28</font>
+                    </td>
+                    <td>
+                        <font color="red">+35</font>
+                    </td>
+                    <td>1%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="12"><a href="/5.45x39mm" title="5.45x39mm">5.45x39mm</a>
+                    </td>
+                    <td rowspan="1"><a href="/5.45x39_mm_SP" title="5.45x39 mm SP">5.45x39 mm SP</a>
+                    </td>
+                    <td>68
+                    </td>
+                    <td>11
+                    </td>
+                    <td>34
+                    </td>
+                    <td>
+                        <font color="green">+10</font>
+                    </td>
+                    <td>
+                        <font color="green">-15</font>
+                    </td>
+                    <td>45%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/5.45x39_mm_HP" title="5.45x39 mm HP">5.45x39 mm HP</a>
+                    </td>
+                    <td>74
+                    </td>
+                    <td>11
+                    </td>
+                    <td>20
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        <font color="red">+5</font>
+                    </td>
+                    <td>35%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/5.45x39_mm_PRS" title="5.45x39 mm PRS">5.45x39 mm PRS</a>
+                    </td>
+                    <td>60
+                    </td>
+                    <td>14
+                    </td>
+                    <td>28
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        <font color="green">-5</font>
+                    </td>
+                    <td>30%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/5.45x39_mm_US" title="5.45x39 mm US">5.45x39 mm US</a> <sup>S</sup>
+                    </td>
+                    <td>65
+                    </td>
+                    <td>15
+                    </td>
+                    <td>34
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        <font color="green">-25</font>
+                    </td>
+                    <td>10%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/5.45x39_mm_FMJ" title="5.45x39 mm FMJ">5.45x39 mm FMJ</a>
+                    </td>
+                    <td>54
+                    </td>
+                    <td>20
+                    </td>
+                    <td>30
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>25%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/5.45x39_mm_T" title="5.45x39 mm T">5.45x39 mm T</a> <sup>T</sup>
+                    </td>
+                    <td>57
+                    </td>
+                    <td>20
+                    </td>
+                    <td>38
+                    </td>
+                    <td>
+                        <font color="red">-5</font>
+                    </td>
+                    <td>
+                        <font color="green">-5</font>
+                    </td>
+                    <td>16%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/5.45x39_mm_PS" title="5.45x39 mm PS">5.45x39 mm PS</a>
+                    </td>
+                    <td>50
+                    </td>
+                    <td>25
+                    </td>
+                    <td>35
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>40%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/5.45x39_mm_PP" title="5.45x39 mm PP">5.45x39 mm PP</a>
+                    </td>
+                    <td>46
+                    </td>
+                    <td>30
+                    </td>
+                    <td>32
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>17%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#eb6c0d80;">2
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/5.45x39_mm_BP" title="5.45x39 mm BP">5.45x39 mm BP</a>
+                    </td>
+                    <td>48
+                    </td>
+                    <td>32
+                    </td>
+                    <td>41
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>16%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/5.45x39_mm_BT" title="5.45x39 mm BT">5.45x39 mm BT</a> <sup>T</sup>
+                    </td>
+                    <td>44
+                    </td>
+                    <td>37
+                    </td>
+                    <td>49
+                    </td>
+                    <td>
+                        <font color="red">-2</font>
+                    </td>
+                    <td>
+                        <font color="red">+3</font>
+                    </td>
+                    <td>16%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/5.45x39_mm_BS" title="5.45x39 mm BS">5.45x39 mm BS</a>
+                    </td>
+                    <td>40
+                    </td>
+                    <td>51
+                    </td>
+                    <td>57
+                    </td>
+                    <td>
+                        <font color="red">-3</font>
+                    </td>
+                    <td>
+                        <font color="red">+10</font>
+                    </td>
+                    <td>17%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/5.45x39_mm_7N39_%22Igolnik%22"
+                            title="5.45x39 mm 7N39 &quot;Igolnik&quot;">5.45x39 mm 7N39 "Igolnik"</a>
+                    </td>
+                    <td>37
+                    </td>
+                    <td>62
+                    </td>
+                    <td>60
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        <font color="red">+15</font>
+                    </td>
+                    <td>2%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="9"><a href="/5.56x45mm_NATO" title="5.56x45mm NATO">5.56x45mm NATO</a>
+                    </td>
+                    <td rowspan="1"><a href="/5.56x45_mm_Warmage" title="5.56x45 mm Warmage">5.56x45 mm Warmage</a>
+                    </td>
+                    <td>85
+                    </td>
+                    <td>3
+                    </td>
+                    <td>14
+                    </td>
+                    <td>
+                        <font color="green">+10</font>
+                    </td>
+                    <td>
+                        <font color="red">+10</font>
+                    </td>
+                    <td>90%
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/5.56x45_mm_55_HP" title="5.56x45 mm 55 HP">5.56x45 mm 55 HP</a>
+                    </td>
+                    <td>75
+                    </td>
+                    <td>9
+                    </td>
+                    <td>22
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>70%
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/5.56x45_mm_Mk_255_Mod_0" title="5.56x45 mm Mk 255 Mod 0">5.56x45 mm Mk 255
+                            Mod
+                            0</a>
+                    </td>
+                    <td>60
+                    </td>
+                    <td>17
+                    </td>
+                    <td>32
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>3%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/5.56x45_mm_M856" title="5.56x45 mm M856">5.56x45 mm M856</a> <sup>T</sup>
+                    </td>
+                    <td>55
+                    </td>
+                    <td>23
+                    </td>
+                    <td>34
+                    </td>
+                    <td>
+                        <font color="red">-5</font>
+                    </td>
+                    <td>
+                        <font color="green">-2</font>
+                    </td>
+                    <td>33%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/5.56x45_mm_55_FMJ" title="5.56x45 mm 55 FMJ">5.56x45 mm 55 FMJ</a>
+                    </td>
+                    <td>52
+                    </td>
+                    <td>24
+                    </td>
+                    <td>33
+                    </td>
+                    <td>
+                        <font color="green">+10</font>
+                    </td>
+                    <td>
+                        <font color="green">-5</font>
+                    </td>
+                    <td>50%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/5.56x45_mm_M855" title="5.56x45 mm M855">5.56x45 mm M855</a>
+                    </td>
+                    <td>50
+                    </td>
+                    <td>30
+                    </td>
+                    <td>37
+                    </td>
+                    <td>
+                        <font color="red">-5</font>
+                    </td>
+                    <td>
+                    </td>
+                    <td>40%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/5.56x45_mm_M856A1" title="5.56x45 mm M856A1">5.56x45 mm M856A1</a>
+                        <sup>T</sup>
+                    </td>
+                    <td>51
+                    </td>
+                    <td>37
+                    </td>
+                    <td>52
+                    </td>
+                    <td>
+                        <font color="red">-2</font>
+                    </td>
+                    <td>
+                        <font color="red">+4</font>
+                    </td>
+                    <td>33%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/5.56x45_mm_M855A1" title="5.56x45 mm M855A1">5.56x45 mm M855A1</a>
+                    </td>
+                    <td>45
+                    </td>
+                    <td>43
+                    </td>
+                    <td>52
+                    </td>
+                    <td>
+                        <font color="red">-10</font>
+                    </td>
+                    <td>
+                    </td>
+                    <td>34%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/5.56x45_mm_M995" title="5.56x45 mm M995">5.56x45 mm M995</a>
+                    </td>
+                    <td>40
+                    </td>
+                    <td>53
+                    </td>
+                    <td>58
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        <font color="red">+8</font>
+                    </td>
+                    <td>32%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="5"><a href="/7.62x39mm" title="7.62x39mm">7.62x39mm</a>
+                    </td>
+                    <td rowspan="1"><a href="/7.62x39_mm_HP" title="7.62x39 mm HP">7.62x39 mm HP</a>
+                    </td>
+                    <td>87
+                    </td>
+                    <td>15
+                    </td>
+                    <td>35
+                    </td>
+                    <td>
+                        <font color="red">-5</font>
+                    </td>
+                    <td>
+                    </td>
+                    <td>26%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/7.62x39_mm_US" title="7.62x39 mm US">7.62x39 mm US</a> <sup>S</sup>
+                    </td>
+                    <td>56
+                    </td>
+                    <td>29
+                    </td>
+                    <td>42
+                    </td>
+                    <td>
+                        <font color="green">+5</font>
+                    </td>
+                    <td>
+                        <font color="green">-30</font>
+                    </td>
+                    <td>8%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/7.62x39_mm_T45M" title="7.62x39 mm T45M">7.62x39 mm T45M</a> <sup>T</sup>
+                    </td>
+                    <td>62
+                    </td>
+                    <td>30
+                    </td>
+                    <td>46
+                    </td>
+                    <td>
+                        <font color="red">-4</font>
+                    </td>
+                    <td>
+                        <font color="green">-6</font>
+                    </td>
+                    <td>12%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/7.62x39_mm_PS" title="7.62x39 mm PS">7.62x39 mm PS</a>
+                    </td>
+                    <td>57
+                    </td>
+                    <td>32
+                    </td>
+                    <td>52
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>25%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/7.62x39_mm_BP" title="7.62x39 mm BP">7.62x39 mm BP</a>
+                    </td>
+                    <td>58
+                    </td>
+                    <td>47
+                    </td>
+                    <td>63
+                    </td>
+                    <td>
+                        <font color="red">-3</font>
+                    </td>
+                    <td>
+                        <font color="red">+5</font>
+                    </td>
+                    <td>12%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="7"><a href="/7.62x51mm_NATO" title="7.62x51mm NATO">7.62x51mm NATO</a>
+                    </td>
+                    <td rowspan="1"><a href="/7.62x51_mm_Ultra_Nosler" title="7.62x51 mm Ultra Nosler">7.62x51 mm Ultra
+                            Nosler</a>
+                    </td>
+                    <td>107
+                    </td>
+                    <td>15
+                    </td>
+                    <td>20
+                    </td>
+                    <td>
+                        <font color="green">+10</font>
+                    </td>
+                    <td>
+                        <font color="green">-5</font>
+                    </td>
+                    <td>70%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/7.62x51_mm_BPZ_FMJ" title="7.62x51 mm BPZ FMJ">7.62x51 mm BPZ FMJ</a>
+                    </td>
+                    <td>88
+                    </td>
+                    <td>31
+                    </td>
+                    <td>33
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        <font color="green">-3</font>
+                    </td>
+                    <td>25%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/7.62x51_mm_TPZ_SP" title="7.62x51 mm TPZ SP">7.62x51 mm TPZ SP</a>
+                    </td>
+                    <td>60
+                    </td>
+                    <td>36
+                    </td>
+                    <td>40
+                    </td>
+                    <td>
+                        <font color="red">-8</font>
+                    </td>
+                    <td>
+                        <font color="green">-5</font>
+                    </td>
+                    <td>20%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/7.62x51_mm_M80" title="7.62x51 mm M80">7.62x51 mm M80</a>
+                    </td>
+                    <td>80
+                    </td>
+                    <td>41
+                    </td>
+                    <td>66
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>17%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/7.62x51_mm_M62" title="7.62x51 mm M62">7.62x51 mm M62</a> <sup>T</sup>
+                    </td>
+                    <td>79
+                    </td>
+                    <td>54
+                    </td>
+                    <td>75
+                    </td>
+                    <td>
+                        <font color="red">-6</font>
+                    </td>
+                    <td>
+                        <font color="green">-5</font>
+                    </td>
+                    <td>14%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/7.62x51_mm_M61" title="7.62x51 mm M61">7.62x51 mm M61</a>
+                    </td>
+                    <td>70
+                    </td>
+                    <td>68
+                    </td>
+                    <td>83
+                    </td>
+                    <td>
+                        <font color="green">+3</font>
+                    </td>
+                    <td>
+                        <font color="red">+10</font>
+                    </td>
+                    <td>13%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/7.62x51_mm_M993" title="7.62x51 mm M993">7.62x51 mm M993</a>
+                    </td>
+                    <td>67
+                    </td>
+                    <td>70
+                    </td>
+                    <td>85
+                    </td>
+                    <td>
+                        <font color="green">+5</font>
+                    </td>
+                    <td>
+                        <font color="red">+8</font>
+                    </td>
+                    <td>13%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="6"><a href="/7.62x54mmR" title="7.62x54mmR">7.62x54mmR</a>
+                    </td>
+                    <td rowspan="1"><a href="/7.62x54R_T-46M" title="7.62x54R T-46M">7.62x54R T-46M</a> <sup>T</sup>
+                    </td>
+                    <td>82
+                    </td>
+                    <td>41
+                    </td>
+                    <td>83
+                    </td>
+                    <td>
+                        <font color="red">-1</font>
+                    </td>
+                    <td>
+                        <font color="green">-5</font>
+                    </td>
+                    <td>18%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/7.62x54R_LPS_Gzh" title="7.62x54R LPS Gzh">7.62x54R LPS Gzh</a>
+                    </td>
+                    <td>81
+                    </td>
+                    <td>42
+                    </td>
+                    <td>78
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>18%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/7.62x54R_7N1_Sniper_cartridge"
+                            title="7.62x54R 7N1 Sniper cartridge">7.62x54R
+                            7N1 Sniper cartridge</a>
+                    </td>
+                    <td>86
+                    </td>
+                    <td>45
+                    </td>
+                    <td>84
+                    </td>
+                    <td>
+                        <font color="green">+10</font>
+                    </td>
+                    <td>
+                        <font color="red">+8</font>
+                    </td>
+                    <td>8%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/7.62x54R_7BT1" title="7.62x54R 7BT1">7.62x54R 7BT1</a> <sup>T</sup>
+                    </td>
+                    <td>78
+                    </td>
+                    <td>59
+                    </td>
+                    <td>87
+                    </td>
+                    <td>
+                        <font color="red">-2</font>
+                    </td>
+                    <td>
+                        <font color="green">-4</font>
+                    </td>
+                    <td>8%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/7.62x54R_SNB" title="7.62x54R SNB">7.62x54R SNB</a>
+                    </td>
+                    <td>75
+                    </td>
+                    <td>62
+                    </td>
+                    <td>87
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        <font color="red">+10</font>
+                    </td>
+                    <td>8%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/7.62x54R_7N37" title="7.62x54R 7N37">7.62x54R 7N37</a>
+                    </td>
+                    <td>72
+                    </td>
+                    <td>70
+                    </td>
+                    <td>88
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>8%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="3"><a href="/12.7x55mm_STs-130" title="12.7x55mm STs-130">12.7x55mm STs-130</a>
+                    </td>
+                    <td rowspan="1"><a href="/12.7x55_mm_PS12A" title="12.7x55 mm PS12A">12.7x55 mm PS12A</a>
+                        <sup>S</sup>
+                    </td>
+                    <td>165
+                    </td>
+                    <td>10
+                    </td>
+                    <td>22
+                    </td>
+                    <td>
+                        <font color="red">-15</font>
+                    </td>
+                    <td>
+                        <font color="green">-12</font>
+                    </td>
+                    <td>70%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/12.7x55_mm_PS12" title="12.7x55 mm PS12">12.7x55 mm PS12</a> <sup>S</sup>
+                    </td>
+                    <td>115
+                    </td>
+                    <td>28
+                    </td>
+                    <td>60
+                    </td>
+                    <td>
+                        <font color="green">+10</font>
+                    </td>
+                    <td>
+                    </td>
+                    <td>30%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#EB6C0D80;">2
+                    </td>
+                    <td style="background-color:#dd333380;">1
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/12.7x55_mm_PS12B" title="12.7x55 mm PS12B">12.7x55 mm PS12B</a>
+                        <sup>S</sup>
+                    </td>
+                    <td>102
+                    </td>
+                    <td>46
+                    </td>
+                    <td>57
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        <font color="red">+15</font>
+                    </td>
+                    <td>30%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#FB9C0E80;">4
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="/40x46_mm" title="40x46 mm">40x46 mm</a>
+                    </td>
+                    <td><a href="/40x46_mm_M576(MP-APERS)" title="40x46 mm M576(MP-APERS)">40x46 mm M576</a>**
+                    </td>
+                    <td data-sort-value="2400">15x160
+                    </td>
+                    <td>5
+                    </td>
+                    <td>95
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>0%
+                    </td>
+                    <td style="background-color:#00640080;">5
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                    <td style="background-color:#ac660080;">3
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="3">Stationary
+                        <p>Weapons
+                        </p>
+                    </td>
+                    <td rowspan="1"><a href="/30x29_mm_VOG-30" title="30x29 mm VOG-30">30x29 mm VOG-30</a>***
+                    </td>
+                    <td>199
+                    </td>
+                    <td>1
+                    </td>
+                    <td>95
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>0%
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                    <td style="background-color:#b3242580;">0
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/12.7x108_mm_B-32" title="12.7x108 mm B-32">12.7x108 mm B-32</a>
+                    </td>
+                    <td>182
+                    </td>
+                    <td>88
+                    </td>
+                    <td>88
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>17%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1"><a href="/12.7x108_mm_BZT-44M" title="12.7x108 mm BZT-44M">12.7x108 mm BZT-44M</a>
+                        <sup>T</sup>
+                    </td>
+                    <td>199
+                    </td>
+                    <td>80
+                    </td>
+                    <td>95
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>17%
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                    <td style="background-color:#00990080;">6
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot></tfoot>
+        </table>
+
+    </div>
+
+
+</body>
+
+</html>
